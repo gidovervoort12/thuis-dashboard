@@ -1,0 +1,17 @@
+services:
+  dashboard:
+    build: .
+    container_name: thuis-dashboard
+    ports:
+      - "8080:8080"
+    environment:
+      DASH_PLACE: Amsterdam
+      DASH_LAT: "52.3676"
+      DASH_LON: "4.9041"
+      DASH_SCHOOL_REGION: noord
+      DASH_CLUB: PSV
+      DASH_F1_FAV: Max Verstappen
+      TZ: Europe/Amsterdam
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
